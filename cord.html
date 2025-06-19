@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>?</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Black+Han+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap');
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Conteúdo principal */
+body {
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+/* Background animado (exemplo de bolas flutuantes) */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #4CB8B6;
+  overflow: hidden;
+  z-index: -1; /* Fundo fica atrás de tudo */
+}
+
+/* Typewriter com quebra de linha */
+.typewriter-wrapper {
+  width: 90vw;        /* Mantém dentro da largura da viewport */
+  max-width: 90vw;
+  overflow: hidden;
+  border-right: 2px solid rgba(255, 255, 255, 0.85);
+  animation: typewriter 12s steps(250) 1s 1 normal both,
+             blinkTextCursor 700ms step-end infinite;
+  position: relative;
+  z-index: 1;          /* Fica acima do fundo */
+  
+}
+
+/* Parágrafo de texto */
+.line-1 {
+  display: inline-block;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;  /* Permite quebra de linha automática */
+}
+
+/* Animação de escrita */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; } /* Preenche todo o espaço do wrapper */
+}
+
+/* Cursor piscando */
+@keyframes blinkTextCursor {
+  0%, 100% { border-right-color: rgba(255, 255, 255, 0.85); }
+  50% { border-right-color: transparent; }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  body {
+    font-size: 1.2rem;
+    padding: 1em;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+    @keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #e9e6e6;
+  overflow: hidden;	
+  background: linear-gradient(-45deg, #bad7f1, #ffffff, #ebeaea, #e6eef0);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+
+
+.ball {
+  position: absolute;
+  width: 150vmin;
+  height: 150vmin;
+  border-radius: 100%;
+  backface-visibility: hidden;
+  animation: move linear infinite;
+}
+
+.ball:nth-child(odd) {
+    color: #ffffff;
+}
+
+.ball:nth-child(even) {
+    color: #d9dcfa;
+}
+
+/* Using a custom attribute for variability */
+.ball:nth-child(1) {
+  top: 77%;
+  left: 88%;
+  animation-duration: 40s;
+  animation-delay: -3s;
+  transform-origin: 16vw -2vh;
+  box-shadow: 40vmin 0 5.703076368487546vmin currentColor;
+}
+.ball:nth-child(2) {
+  top: 42%;
+  left: 2%;
+  animation-duration: 53s;
+  animation-delay: -29s;
+  transform-origin: -19vw 21vh;
+  box-shadow: -40vmin 0 5.17594621519026vmin currentColor;
+}
+.ball:nth-child(3) {
+  top: 28%;
+  left: 18%;
+  animation-duration: 49s;
+  animation-delay: -8s;
+  transform-origin: -22vw 3vh;
+  box-shadow: 40vmin 0 5.248179047256236vmin currentColor;
+}
+.ball:nth-child(4) {
+  top: 50%;
+  left: 79%;
+  animation-duration: 26s;
+  animation-delay: -21s;
+  transform-origin: -17vw -6vh;
+  box-shadow: 40vmin 0 5.279749632220298vmin currentColor;
+}
+.ball:nth-child(5) {
+  top: 46%;
+  left: 15%;
+  animation-duration: 36s;
+  animation-delay: -40s;
+  transform-origin: 4vw 0vh;
+  box-shadow: -40vmin 0 5.964309466052033vmin currentColor;
+}
+.ball:nth-child(6) {
+  top: 77%;
+  left: 16%;
+  animation-duration: 31s;
+  animation-delay: -10s;
+  transform-origin: 18vw 4vh;
+  box-shadow: 40vmin 0 5.178483653434181vmin currentColor;
+}
+.ball:nth-child(7) {
+  top: 22%;
+  left: 17%;
+  animation-duration: 55s;
+  animation-delay: -6s;
+  transform-origin: 1vw -23vh;
+  box-shadow: -40vmin 0 5.703026794398318vmin currentColor;
+}
+.ball:nth-child(8) {
+  top: 41%;
+  left: 47%;
+  animation-duration: 43s;
+  animation-delay: -28s;
+  transform-origin: 25vw -3vh;
+  box-shadow: 40vmin 0 5.196265905749415vmin currentColor;
+}
+
+/* Not needed styles */
+
+h1 {
+  margin: 0;
+  padding: 50px;
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: "Tangerine", cursive;
+  font-style: italic;
+  z-index: 9;
+  font-size: 180%;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+
+.ponto {
+    font-family: "Tangerine", cursive;
+    font-size: 250%;
+    text-align: center;
+}
+
+:root {
+  --color-1: rgb(255, 255, 255);
+  --color-2: rgb(0, 0, 0);
+  --color-3: rgb(0, 0, 0);
+  --color-4: rgb(255, 255, 255);
+
+  --aura-size: 500%;
+  --aura-speed: 15s;
+
+  --aura-1: var(--color-1);
+  --aura-2: var(--color-2);
+  --aura-3: var(--color-3);
+  --aura-4: var(--color-4);
+}
+
+body {
+  background: #181818;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 1ch var(--color-3), 0 0 4ch var(--color-2);
+  animation: aura var(--aura-speed) linear infinite;
+  background-size: var(--aura-size) var(--aura-size);
+  background-image: radial-gradient(transparent 0, transparent 20%),
+    radial-gradient(at 62% 9%, var(--aura-1) 0px, transparent 50%),
+    radial-gradient(at 69% 60%, var(--aura-2) 0px, transparent 50%),
+    radial-gradient(at 24% 89%, var(--aura-3) 0px, transparent 50%),
+    radial-gradient(at 51% 77%, var(--aura-4) 0px, transparent 50%),
+    radial-gradient(at 78% 92%, var(--aura-1) 0px, transparent 50%);
+}
+
+.wrapper {
+  padding: 5em;
+}
+h1 {
+  font-size: 10rem;
+  font-weight: lighter;
+  line-height: 1;
+  margin: 0;
+}
+
+@keyframes aura {
+  0% {
+    background-position: center, 50% 50%, 30% 100%, 100% 10%, 23% 23%, 0% 80%;
+  }
+  33.333% {
+    background-position: center, 10% 75%, 40% 80%, 60% 20%, 43% 23%, 16% 30%;
+  }
+  66.666% {
+    background-position: center, 25% 35%, 80% 50%, 10% 10%, 66% 5%, 30% 0%;
+  }
+  100% {
+    background-position: center, 50% 50%, 30% 100%, 100% 10%, 23% 23%, 0% 80%;
+  }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+  </style>
+</head>
+<body>
+
+<div class="ponto"> O Diário do Primeiro Desertor</div>
+  <div class="typewriter" id="typewriter">
+</div>
+
+    <div class="background">
+  <!-- Using common classes to minimize redundancy -->
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+    <span class="ball"></span>
+</div>
+
+
+  <script>
+    const text = `Era uma vez uma cidade muito à frente de seu tempo. Erguida acima das nuvens, sustentada por colunas de sabedoria esquecida e engrenagens de um futuro ainda não imaginado, chamava-se Nova Pompeia. Seu fundador — cujo nome há muito fora apagado pelos ventos da história — era um homem de prodigiosa inteligência. Detinha conhecimento técnico e filosófico que transcendia sua época, criando artefatos e estruturas que pareciam mágicas aos olhos dos contemporâneos. Foi ele quem lançou os alicerces de Nova Pompeia, a cidade suspensa entre os céus, oculta das mazelas do mundo abaixo. E foi lá, em meio às torres de vidro negro e bibliotecas infinitas, que nasceu um outro homem — igualmente à frente de seu tempo. A esse homem, ainda criança, foi conferida uma marca. Chamavam-na de Marca da Sabedoria, um símbolo misterioso que se manifestava em raros escolhidos. Com ela, ele foi capaz de desvendar os maiores segredos do mundo natural e espiritual. Nenhum enigma era grande demais, nenhuma linguagem indecifrável, nenhuma estrutura ininteligível. Contudo, ele jamais poderia deixar Nova Pompeia. A cidade, ciosa de seus segredos, não permitia que os marcados e cidadãos cruzassem seus limites. Estavam presos por juramentos e algoritmos, por maldições e mecanismos. Mas esse homem — cujo nome nunca foi revelado — ousou desafiar tal condição. Combinando sua genialidade ao desejo de liberdade, rompeu os grilhões invisíveis e escapou. Tornou-se, assim, o Primeiro Desertor. Nas terras abaixo, descobriu o que os sábios apenas sussurravam e o que os loucos temiam sonhar. Investigou o paranormal com frieza cirúrgica, desmontou o sobrenatural como se fosse uma máquina imperfeita. O que para centenas de homens seria suficiente para levá-los à loucura, ele compreendeu, dominou — e transcendeu. E então, encontrou aquilo que buscava: uma resposta. Uma explicação para o caos do mundo, uma solução para os desequilíbrios da existência. Sabendo-se marcado desde o nascimento, e agora pleno de conhecimento, caminhou até o fim de todas as coisas — um lugar onde o tempo hesita e a realidade se curva — para trazer sua revelação ao mundo imperfeito. Jamais voltou. Mas deixou algo para trás. Um diário. Um único volume. Nele, cada página é um fragmento da verdade que o mundo recusou aceitar e uma conclusão: a Verdade é absoluta.`;
+
+    const el = document.getElementById('typewriter');
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);  // Velocidade da digitação (ms)
+      } else {
+        // Parar o cursor piscante após o fim da digitação, se quiser
+        el.style.borderRight = "none";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", typeWriter());
+  </script>
+
+</body>
+</html>
